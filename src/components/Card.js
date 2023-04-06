@@ -18,7 +18,7 @@ export default function Card({ img, rating, reviewCount, location, title, price 
 				<span className="gray"> ({reviewCount}) • </span>
 				<span className="gray">{location}</span>
 			</div>
-			<p className="card--text">{title}</p>
+			<p className="card--title">{title}</p>
 			<p className="card--price"><span className="bold">From ${price}</span> / person</p>
 		</div>
 	)
