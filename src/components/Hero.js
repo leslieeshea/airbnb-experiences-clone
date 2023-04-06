@@ -1,12 +1,11 @@
 /* eslint-disable jsx-a11y/img-redundant-alt */
 import React from 'react';
-import photo from '../images/photo-grid.png';
 
 export default function Hero() {
 	return (
 		<section className="hero">
 			<img
-				src={photo}
+				src='../images/photo-grid.png'
 				alt="Photo Grid"
 				className="hero--photo"
 			/>
