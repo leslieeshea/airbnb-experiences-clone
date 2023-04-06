@@ -1,11 +1,11 @@
 import React from 'react';
 
-export default function Card({ img, rating, reviewCount, location, title, price, openSpots }) {
+export default function Card(props) {
 	let badgeText;
 
-	if (openSpots === 0) {
+	if (props.data.openSpots === 0) {
 		badgeText = 'SOLD OUT';
-	} else if (location === 'Online') {
+	} else if (props.data.location === 'Online') {
 		badgeText = 'ONLINE';
 	}
 
@@ -13,7 +13,7 @@ export default function Card({ img, rating, reviewCount, location, title, price,
 		<div className="card">
 			{badgeText && <div className="card--badge">{badgeText}</div>}
 			<img
-				src={`../images/${img}`}
+				src={`../images/${props.data.coverImg}`}
 				alt="Katie"
 				className="card--image"
 			/>
@@ -23,12 +23,12 @@ export default function Card({ img, rating, reviewCount, location, title, price,
 					alt="Star"
 					className="card--star"
 				/>
-				<span>{rating}</span>
-				<span className="gray"> ({reviewCount}) • </span>
-				<span className="gray">{location}</span>
+				<span>{props.data.stats.rating}</span>
+				<span className="gray"> ({props.data.stats.reviewCount}) • </span>
+				<span className="gray">{props.data.location}</span>
 			</div>
-			<p className="card--title">{title}</p>
-			<p className="card--price"><span className="bold">From ${price}</span> / person</p>
+			<p className="card--title">{props.data.title}</p>
+			<p className="card--price"><span className="bold">From ${props.data.price}</span> / person</p>
 		</div>
 	)
 }
