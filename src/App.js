@@ -8,6 +8,7 @@ export default function App() {
   const cardElements = data.map(data => {
     return (
       <Card
+        key={data.id}
         img={data.coverImg}
         rating={data.stats.rating}
         reviewCount={data.stats.review}
@@ -22,7 +23,9 @@ export default function App() {
     <div>
       <Navbar />
       <Hero />
-      {cardElements}
+      <section className="cards-list">
+        {cardElements}
+      </section>
     </div>
   );
 }
